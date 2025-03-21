@@ -4,16 +4,7 @@
   <meta charset ="uft-8">
   <link rel="stylesheet" href=styles.css> 
   <script languague="javascript">
-    function sumar(sum1, sum2)
-{
-    let resultado;
-    resultado = sum1 + sum2;
-    return resultado;
-}
-alert("45 + 179 = "+ sumar(45, 179) );
-/*Mostrar resultado*/
-  
-/*actividad de ecuacion de segundo grado*/  
+    
 function discrim(a, b, c)
  {
  return (b*b - 4*a*c);
@@ -47,6 +38,23 @@ function diasHasta(final){
   </head>
   <body>
    <h1>Sumar</h1> 
+<script>    
+ function sumar(sum1, sum2)
+
+{
+
+    let resultado;
+
+    resultado = sum1 + sum2;
+
+    return resultado;
+
+}
+
+alert("12 + 1 = "+ sumar(12, 1) );
+
+/*Mostrar resultado*/
+</script>
     <h1>Ecuación de segundo grado</h1>  
 <p>La ecuación es </p>
 <p>Ecuación 5x2 - 86·x  + 1290 = 0 </p>
@@ -62,18 +70,32 @@ diasHasta({año:2025, mes:11, dia:25} )
 </script>
 <h2>Progress Bar dependiente del Scroll</h2>
     
-<body style="height: 200px" data-sb-target="bar" >
+<body style="height: 200vh" data-sb-target="bar" >
+
 <div id="bar"></div>
+
 <div>Desplaza esta pagina hacia abajo con la barra de scroll lateral para ver el efecto en funcionamiento</div>
+
 <script>
 
+
+/*Progress bar de ancho según scroll*/
+
+
 window.addEventListener("scroll", ()=>{
+
+
    const element =  document.documentElement;
+
+
    const progressBar = document.getElementById(document.body.dataset.sbTarget);
+
+
    const percentage = Math.round(100*element.scrollTop/(element.scrollHeight - element.clientHeight));
+
+
    progressBar.style.width = percentage+"%";
-  });
-</script>
- 
+
+});
 </body>
 </html>

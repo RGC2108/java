@@ -2,17 +2,85 @@
 <html>
   <head> 
   <meta charset ="uft-8">
-  <script>
-    alert (resultado);
-    let resultado = "Nombre: " + nombre;
-    let nombre = "Raquel Gonzalez";
+  <link rel="stylesheet" href=styles.css> 
+  <script languague="javascript">
+    function sumar(sum1, sum2)
+{
+    let resultado;
+    resultado = sum1 + sum2;
+    return resultado;
+}
+alert("4 + 10 = "+ sumar(4, 10) );
+/*Mostrar resultado*/
+  
+/*actividad de ecuacion de segundo grado*/  
+function discrim(a, b, c)
+ {
+ return (b*b - 4*a*c);
+} 
+ function solucionar(a, b, c, sol)
+ {
+ let disc = discrim(a,b,c);
+ if (disc < 0)
+    alert("Sin solución real");
+ else
+    {
+    sol[0] = (-b + Math.sqrt(disc))/(2*a);
+    sol[1] = (-b - Math.sqrt(disc))/(2*a);
+    } 
+} 
+/*Contar dias*/
     
+<script>
+//final: array {dia, mes,año}
+function diasHasta(final){
+  let Hoy=new Date();
+  let fin = new Date(final.año, final.mes, final.dia);
+  let mseg_dia=1000*60*60*24;
+  let dias ;
+  if (Hoy.getMonth()==final.mes && Hoy.getDate()>final.dia) {
+      fin.setFullYear(fin.getFullYear()+1) ;
+  }
+  dias = Math.ceil((fin.getTime()-Hoy.getTime())/(mseg_dia));
+  let cuadro=document.getElementById('cuenta');
+  cuadro.innerText="Faltan "+dias+" dias hasta "+fin.toLocaleDateString()
+} 
+</script>
   </script> 
   </head>
   <body>
-    <h1>Hi! there's me trying to figure out why the hell I'm styduing science instead of languagues </h1>
-    <h2>I'm following this Chinese guy to understand why the hell Javascript doesn't work on my original task</h2>
-    <p>And yes, I'm doing this crap in English 'cause this is the reason why i'm learning English, aint I? This is my diary about Javascript and how i'm going to lose my damn mind with this beautiful and magnificent crap</p>
+   <h1>Sumar</h1> 
+
+    <h1>Fin de la actividad</h1>
+    <h1>Ecuación de segundo grado</h1>
+  
+<p>La ecuación es </p>
+<p>Ecuación x2 - 8·x  + 12 = 0 </p>
+ <script>
+ var soluc = new Array(2);
+ solucionar(1,-8,12, soluc) ;
+ document.write( "Soluciones "+soluc[0]+" y "+soluc[1]);
+</script>
+  <h1>Contar dias</h1>
+
+<div id="cuenta"></div>
+<script>
+diasHasta({año:2025, mes:11, dia:25} )
+</script>
+<h2>Progress Bar dependiente del Scroll</h2>
     
-  </body>
+<body style="height: 200vh" data-sb-target="bar" >
+<div id="bar"></div>
+<div>Desplaza esta pagina hacia abajo con la barra de scroll lateral para ver el efecto en funcionamiento</div>
+<script>
+/*Progress bar de ancho según scroll*/
+window.addEventListener("scroll", ()=>{
+   const element =  document.documentElement;
+   const progressBar = document.getElementById(document.body.dataset.sbTarget);
+   const percentage = Math.round(100*element.scrollTop/(element.scrollHeight - element.clientHeight));
+   progressBar.style.width = percentage+"%";
+  });
+</script>              
+
+</body>
 </html>

@@ -51,7 +51,7 @@ function diasHasta(final){
 
 }
 
-alert("12 + 1 = "+ sumar(12, 1) );
+alert("11 + 2 = "+ sumar(11, 2) );
 
 /*Mostrar resultado*/
 </script>
@@ -71,31 +71,23 @@ diasHasta({año:2025, mes:11, dia:25} )
 <h2>Progress Bar dependiente del Scroll</h2>
     
 <body style="height: 200vh" data-sb-target="bar" >
-
 <div id="bar"></div>
-
 <div>Desplaza esta pagina hacia abajo con la barra de scroll lateral para ver el efecto en funcionamiento</div>
-
 <script>
-
 
 /*Progress bar de ancho según scroll*/
 
-
 window.addEventListener("scroll", ()=>{
-
 
    const element =  document.documentElement;
 
-
    const progressBar = document.getElementById(document.body.dataset.sbTarget);
 
-
    const percentage = Math.round(100*element.scrollTop/(element.scrollHeight - element.clientHeight));
-
 
    progressBar.style.width = percentage+"%";
 
 });
+</script>  
 </body>
-</html>
+</html>  

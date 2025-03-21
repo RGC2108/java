@@ -31,7 +31,6 @@ function discrim(a, b, c)
 } 
 /*Contar dias*/
     
-<script>
 //final: array {dia, mes,año}
 function diasHasta(final){
   let Hoy=new Date();
@@ -45,7 +44,7 @@ function diasHasta(final){
   let cuadro=document.getElementById('cuenta');
   cuadro.innerText="Faltan "+dias+" dias hasta "+fin.toLocaleDateString()
 } 
-</script>
+
   </script> 
   </head>
   <body>
@@ -61,6 +60,7 @@ function diasHasta(final){
  solucionar(1,-8,12, soluc) ;
  document.write( "Soluciones "+soluc[0]+" y "+soluc[1]);
 </script>
+    
   <h1>Contar dias</h1>
 
 <div id="cuenta"></div>
@@ -69,7 +69,7 @@ diasHasta({año:2025, mes:11, dia:25} )
 </script>
 <h2>Progress Bar dependiente del Scroll</h2>
     
-<body style="height: 200vh" data-sb-target="bar" >
+<body style="height: 200px" data-sb-target="bar" >
 <div id="bar"></div>
 <div>Desplaza esta pagina hacia abajo con la barra de scroll lateral para ver el efecto en funcionamiento</div>
 <script>
